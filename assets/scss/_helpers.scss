@@ -1,0 +1,250 @@
+$directions: (top, right, bottom, left);
+$directionGroups: (vertical: (top, bottom), horizontal: (left, right));
+$sizes: (none: 0, x-nano: 5px, nano: 10px, tiny: 15px, small: 30px, medium: 42px, medium-l: 80px, large: 160px);
+$smSizes: (none: 0, x-nano: 5px, nano: 10px, tiny: 10px, small: 30px, medium: 30px, large: 80px);
+
+@mixin createSizeHelperOf($property,
+  $sizes: $sizes,
+  $directions: $directions) {
+
+  @each $direction in $directions {
+    @each $sizeId, $size in $sizes {
+      .#{$property}--#{$direction}-#{$sizeId} {
+        #{$property}-#{$direction}: $size;
+      }
+    }
+  }
+
+  @each $direction in $directions {
+    @each $sizeId, $size in $sizes {
+      @media screen and (max-width: $breakpoint-max-lg) {
+        .#{$property}--lg-#{$direction}-#{$sizeId} {
+          #{$property}-#{$direction}: $size;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-max-md) {
+        .#{$property}--md-#{$direction}-#{$sizeId} {
+          #{$property}-#{$direction}: $size;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-max-sm) {
+        .#{$property}--sm-#{$direction}-#{$sizeId} {
+          #{$property}-#{$direction}: $size;
+        }
+      }
+
+      @media screen and (max-width: $breakpoint-max-xs) {
+        .#{$property}--xs-#{$direction}-#{$sizeId} {
+          #{$property}-#{$direction}: $size;
+        }
+      }
+    }
+  }
+}
+
+@mixin createGroupedSizeHelperOf($property,
+  $sizes: $sizes,
+  $directions: $directions,
+  $directionGroups: $directionGroups) {
+
+  @each $sizeId, $size in $sizes {
+    .#{$property}--#{$sizeId} {
+      #{$property}: $size;
+    }
+  }
+
+  // Loop again trough all sizes. This makes sure all responsive
+  // helpers are created after all default helpers
+  @each $sizeId, $size in $sizes {
+    @media screen and (max-width: $breakpoint-max-lg) {
+      .#{$property}--lg-#{$sizeId} {
+        #{$property}: $size;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-max-md) {
+      .#{$property}--md-#{$sizeId} {
+        #{$property}: $size;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-max-sm) {
+      .#{$property}--sm-#{$sizeId} {
+        #{$property}: $size;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-max-xs) {
+      .#{$property}--xs-#{$sizeId} {
+        #{$property}: $size;
+      }
+    }
+  }
+
+  @each $groupName in map-keys($directionGroups) {
+    @each $sizeId, $size in $sizes {
+      .#{$property}--#{$groupName}-#{$sizeId} {
+        @each $direction in map-get($directionGroups, $groupName) {
+          #{$property}-#{$direction}: $size;
+        }
+      }
+    }
+  }
+}
+
+@include createSizeHelperOf(padding);
+@include createGroupedSizeHelperOf(padding);
+
+@include createSizeHelperOf(margin);
+@include createGroupedSizeHelperOf(margin);
+
+@media screen and (max-width: $breakpoint-max-sm) {
+  @include createSizeHelperOf(padding, $smSizes);
+  @include createGroupedSizeHelperOf(padding, $smSizes);
+
+  @include createSizeHelperOf(margin, $smSizes);
+  @include createGroupedSizeHelperOf(margin, $smSizes);
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+
+  &__cell {
+    display: table-cell;
+  }
+
+  &--layout-fixed {
+    table-layout: fixed;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+
+  &--direction-column {
+    flex-direction: column;
+  }
+}
+
+.width {
+  &--stretch {
+    width: 100%;
+  }
+}
+
+.position {
+  &--relative {
+   position: relative;
+  }
+}
+
+.vertical {
+  &--align-middle {
+    vertical-align: middle;
+  }
+}
+
+.interaction--disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.display {
+  &--none {
+    display: none;
+  }
+
+  &--inline-block {
+    display: inline-block;
+  }
+
+  &--background-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+
+  &--content-layer {
+    position: relative;
+    z-index: 3;
+  }
+
+  @media screen and (max-width: $breakpoint-max-xs) {
+    &--xs-none {
+      display: none;
+    }
+
+    &--xs-block {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    &--sm-none {
+      display: none;
+    }
+
+    &--sm-block {
+      display: block;
+    }
+
+    &--sm-inline-block {
+      display: inline-block;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-max-md) {
+    &--md-none {
+      display: none;
+    }
+
+    &--md-block {
+      display: block;
+    }
+  }
+}
+
+.float {
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+}
+
+.text {
+  &--align-left {
+    text-align: left;
+  }
+
+  &--align-center {
+    text-align: center;
+  }
+
+  &--align-right {
+    text-align: right;
+  }
+
+  &--transform-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

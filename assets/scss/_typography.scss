@@ -1,0 +1,159 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+// @import url('https://fonts.googleapis.com/css?family=Work+Sans:700,600,300');
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $color-black;
+  font-family: 'Libre Franklin', sans-serif;
+  min-height: 100%;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 1.5rem;
+    line-height: 1.87;
+  }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: normal;
+  line-height: 0.9;
+}
+
+.massive {
+  font-size: 7.2rem !important;
+  text-transform: uppercase;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 3rem !important;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 5.2rem;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 3rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 3.2rem;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 2.2rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 2.9rem;
+}
+
+h4,
+.h4 {
+  font-size: 2.2rem;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 1.8rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1.8rem;
+}
+
+.slightly-longer-title {
+  font-size: 4.6rem;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 2.3rem;
+    line-height: 1;
+  }
+}
+
+.very-long-title {
+  font-size: 3.2rem;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
+
+a {
+  transition: all 0.25s;
+  transition-property: background-color, color, opacity;
+}
+
+img {
+  width: 100%;
+  display: inline-block;
+}
+
+small,
+.small {
+  font-size: 1.6rem;
+
+  @media screen and (max-width: $breakpoint-max-sm) {
+    font-size: 1.2rem;
+  }
+}
+
+strong {
+  font-weight: $weight-bold;
+}
+
+hr {
+  background-color: $color-gray;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: 0;
+  outline: 0;
+  width: 100%;
+}
+
+.opacity {
+  &--half {
+    opacity: 0.5;
+  }
+}
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  width: 1em;
+}

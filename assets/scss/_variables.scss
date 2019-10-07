@@ -1,0 +1,19 @@
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #d5d5d5;
+$color-light-gray: #e5e8ec;
+
+$weight-bold: 600;
+
+// Extra small devices (portrait phones, less than 576px)
+$breakpoint-max-xs: 575px;
+$breakpoint-min-xs: $breakpoint-max-xs + 1;
+// Small devices (landscape phones, less than 768px)
+$breakpoint-max-sm: 767px;
+$breakpoint-min-sm: $breakpoint-max-sm + 1;
+// Medium devices (tablets, less than 992px)
+$breakpoint-max-md: 991px;
+$breakpoint-min-md: $breakpoint-max-md + 1;
+// Large devices (desktops, less than 1200px)
+$breakpoint-max-lg: 1199px;
+$breakpoint-min-lg: $breakpoint-max-lg + 1;

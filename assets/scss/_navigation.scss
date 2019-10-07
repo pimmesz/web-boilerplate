@@ -1,0 +1,8 @@
+.navbar {
+  background-color: $color-gray;
+
+  &-item img {
+    max-height: 1.75rem;
+    width: auto;
+  }
+}
