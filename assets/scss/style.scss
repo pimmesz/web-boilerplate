@@ -1,5 +1,6 @@
 @import "vendor/reset";
 @import "vendor/bourbon/bourbon";
+@import "~bulma/bulma.sass";
 
 @import "variables";
 @import "font-face";
@@ -10,4 +11,3 @@
 @import "hero";
 @import "page";
 
-@import "~bulma/bulma.sass";

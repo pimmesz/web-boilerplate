@@ -1,5 +1,4 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-// @import url('https://fonts.googleapis.com/css?family=Work+Sans:700,600,300');
 
 *,
 *:after,
@@ -94,66 +93,18 @@ h5,
   font-size: 1.8rem;
 }
 
-.slightly-longer-title {
-  font-size: 4.6rem;
-
-  @media screen and (max-width: $breakpoint-max-sm) {
-    font-size: 2.3rem;
-    line-height: 1;
-  }
-}
-
-.very-long-title {
-  font-size: 3.2rem;
-
-  @media screen and (max-width: $breakpoint-max-sm) {
-    font-size: 2rem;
-    line-height: 1.1;
-  }
-}
-
-a {
-  transition: all 0.25s;
-  transition-property: background-color, color, opacity;
-}
-
-img {
-  width: 100%;
-  display: inline-block;
-}
-
-small,
-.small {
+p,
+.p {
   font-size: 1.6rem;
-
-  @media screen and (max-width: $breakpoint-max-sm) {
-    font-size: 1.2rem;
-  }
 }
 
-strong {
-  font-weight: $weight-bold;
+a,
+.a {
+  font-size: 1.6rem;
 }
 
-hr {
-  background-color: $color-gray;
-  border: 0;
-  display: block;
-  height: 1px;
-  margin: 0;
-  outline: 0;
-  width: 100%;
-}
-
-.opacity {
-  &--half {
-    opacity: 0.5;
-  }
-}
-
-.icon {
-  display: inline-block;
-  fill: currentColor;
-  height: 1em;
-  width: 1em;
+strong,
+.strong {
+  font-size: 1.6rem;
+  font-weight: $font-weight-bold;
 }
